@@ -8,17 +8,35 @@
 document.write("<h1>This is a heading</h1>");
 document.write("<p>This is a paragraph</p>");
   /**/
-  	document.bind("contextmenu", function () { return false; });//禁止右键
+  	document.oncontextmenu = function (a) {
+	    var a = a || window.event;
+	    if (a.button == 2) {
+		    window.alert("666");
+		    return false;
+	    }
+	return true
+	}//右键
 		        document.oncontextmenu = function () { return false; };
 		        document.onkeydown = function () {
 		            if (window.event && window.event.keyCode == 123) {
 		                event.keyCode = 0;
 		                event.returnValue = false;
+				document.write("<p>不要乱按！！！</p>");
 				window.alert("我是一个警告框！");
 		                return false;
 		            }
 		        };//禁止F12
-  /**/
+  /*
+	document.oncontextmenu= function(e){ 
+        var e = e || window.event;
+        if(e.button == "2"){ //判断是否是右键
+  //……你的代码……
+            alert("右击事件"); 
+   return false;
+  } 
+  return true;
+    }
+  */
 </script>
 </body>
 </html>
