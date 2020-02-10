@@ -14,15 +14,17 @@ document.write("<p>This is a paragraph</p>");
 		    window.alert("666");
 		    return false;
 	    }
-	return false;
+	    return false;
 	}//右键
-	document.onkeydown = function () {
-		if (window.event && window.event.keyCode == 123) {
+	document.onkeydown = function (a) {
+		var a = a || window.event
+		if (a && a.keyCode == 123) {
 			event.keyCode = 0;
 			event.returnValue = false;
 			window.alert("休得顽皮");
 			return false;
 		}
+		return false;
 	};//禁止F12
   /*
 	document.oncontextmenu= function(e){ 
