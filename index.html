@@ -8,7 +8,7 @@
 document.write("<h1>This is a heading</h1>");
 document.write("<p>This is a paragraph</p>");
   /**/
-  	bind("contextmenu", function () { return false; });//禁止右键
+  	document.bind("contextmenu", function () { return false; });//禁止右键
 		        document.oncontextmenu = function () { return false; };
 		        document.onkeydown = function () {
 		            if (window.event && window.event.keyCode == 123) {
