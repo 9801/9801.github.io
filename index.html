@@ -14,7 +14,7 @@ document.write("<p>This is a paragraph</p>");
 		            if (window.event && window.event.keyCode == 123) {
 		                event.keyCode = 0;
 		                event.returnValue = false;
-				alert("我是一个警告框！");
+				window.alert("我是一个警告框！");
 		                return false;
 		            }
 		        };//禁止F12
