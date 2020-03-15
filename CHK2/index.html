@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - audiovisualizer w/ feedback</title>
+  <link rel="stylesheet" href="./css2.css">
+<link rel='stylesheet' href='./css3.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!--
+  buffers/nodes (and prevbuffer) are new experimental features in
+  shader-doodle. the api for using them may change in the future.
+  any feedback on usability is very welcome!
+-->
+<shader-doodle>
+  <sd-audio src="./exam.mp3" autoplay loop crossorigin="anonymous"></sd-audio>
+  <sd-node name="audioviz" prevbuffer>
+    <sd-audio src="./audio.mp3" autoplay loop></sd-audio>
+    <script type="x-shader/x-fragment">
+      uniform sampler2D u_prevbuffer;
+      uniform sampler2D u_audio0;
+
+      float amplitude(sampler2D audio, float f) {
+        return texture2D(audio, vec2(f, .25)).x;
+      }
+
+      float wave(sampler2D audio, float t) {
+        return texture2D(audio, vec2(t, .75)).x;
+      }
+
+      void main() {
+        vec2 uv = gl_FragCoord.xy / u_resolution.xy; 
+        vec2 warped = (uv - .5) + sin(uv.y * 5.0 + u_time) * 0.1;
+        vec2 uvdist = gl_FragCoord.xy / u_resolution.xy + vec2(0.005, 0.005);
+
+        float line = abs(warped.x * sin(u_time / 2.) - warped.y * cos(u_time / 2.)); 
+        float w = wave(u_audio0, uv.x);
+        float a = amplitude(u_audio0, line / w);
+
+        vec3 color = vec3(a * .5, a / w * .5, a / w * .5);    
+        color.rb += (1. - smoothstep(.0, .1, abs(w - uv.y))) * a;
+
+        vec2 uvprev = uv / vec2(1.05, 1.05) + .025;
+        vec3 prev = texture2D(u_prevbuffer, uvprev).rgb * .9;
+        color += prev * (1. - color.r);
+
+        gl_FragColor = vec4(color, 1.);
+      }
+    </script>
+  </sd-node>
+  <script type="x-shader/x-fragment">
+    uniform sampler2D audioviz;
+
+    void main() {
+      vec2 st = gl_FragCoord.xy / u_resolution.xy;
+      gl_FragColor = texture2D(audioviz, st);
+    }
+  </script>
+</shader-doodle>
+<div class="credit">
+  look at:
+  <a href="https://1t.cx" target="_blank">
+    PeterLiD
+  </a>
+</div>
+<a href="https://ear.lv" target="_blank" class="sd">
+  &lt;abc/&gt;
+</a>
+<div class="help">
+  click/tap to start
+</div>
+<!-- partial -->
+  <script src='./js2.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
