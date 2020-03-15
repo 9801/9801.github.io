@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>CodePen - audiovisualizer w/ feedback</title>
-  <link rel="stylesheet" href="./css2.css">
-<link rel='stylesheet' href='./css3.css'><link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dosis&amp;display=swap'><link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
@@ -15,7 +15,7 @@
   any feedback on usability is very welcome!
 -->
 <shader-doodle>
-  <sd-audio src="./exam.mp3" autoplay loop crossorigin="anonymous"></sd-audio>
+  <sd-audio src="https://s.halvves.com/majortunage.mp3" autoplay loop crossorigin="anonymous"></sd-audio>
   <sd-node name="audioviz" prevbuffer>
     <sd-audio src="./audio.mp3" autoplay loop></sd-audio>
     <script type="x-shader/x-fragment">
@@ -60,19 +60,19 @@
   </script>
 </shader-doodle>
 <div class="credit">
-  look at:
-  <a href="https://1t.cx" target="_blank">
-    PeterLiD
+  music by:
+  <a href="https://merlandmrkelmerr.bandcamp.com/album/asmr-funky-kong-fun-to-play-and-have-fun-with-happy-family-time-spiderman-hulk-marvel-family-eggs-and-other-fun" target="_blank">
+    merlandmrkelmerr
   </a>
 </div>
-<a href="https://ear.lv" target="_blank" class="sd">
-  &lt;abc/&gt;
+<a href="https://github.com/halvves/shader-doodle" target="_blank" class="sd">
+  &lt;shader-doodle/&gt;
 </a>
 <div class="help">
   click/tap to start
 </div>
 <!-- partial -->
-  <script src='./js2.js'></script><script  src="./script.js"></script>
+  <script src='https://unpkg.com/shader-doodle@1.0.0-alpha.13'></script><script  src="./script.js"></script>
 
 </body>
 </html>
