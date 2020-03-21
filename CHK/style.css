@@ -18,7 +18,7 @@ body {
           filter: blur(5px) contrast(5);
 }
 .digit .segment {
-  background: #9abedf;
+  background: #FFD700;
   width: calc(100px / 3);
   height: calc(100px / 3);
   position: absolute;
