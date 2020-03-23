@@ -1,37 +1,147 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="icon" href="img.jpg" >
-        <title>DOGEHAHAHA</title>
-        <style>
-            img{
-                width: auto;
-                height:auto;
-                max-height: 100%;
-                max-width: 100%;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="div" style="width: 50px;height: 50px;">
-            <img src="a.jpg" />
-        </div>
-        <script>
-            window.onload=function(){
-                setInterval(function(){move();},10);
-            }
-              
-            function move(){
-                var _width=document.getElementById('div').style.width.replace('px','');
-                if(parseInt(_width)>400){
-                    document.getElementById('div').style.width=parseInt(_width)-5+'px';
-                    document.getElementById('div').style.height=parseInt(_width)-5+'px';
-                }else{
-                    document.getElementById('div').style.width=parseInt(_width)+5+'px';
-                    document.getElementById('div').style.height=parseInt(_width)+5+'px';
-                }
-            }
-        </script>
-    </body>
+﻿<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<meta name="referrer" content="same-origin">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+<meta name=”theme-color” content=”#faceff″″>
+<meta name=”msapplication-navbutton-color” content=”#faceff″>
+<meta name=”apple-mobile-web-app-status-bar-style” content=”#faceff″>
+<link rel="icon" href="./fav.ico" >
+<title>Coming Soon</title>
+
+<style>
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+#load{
+	/* width: 100%; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #faceff;
+}
+ul{
+	height: 150px;
+}
+li{
+	float: left;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	margin-right: 10px;
+}
+li:nth-child(1){
+	background-color: #29ffbb;
+	animation: love1 2s infinite;
+}
+li:nth-child(2){
+	background-color: #00f6dc;
+	animation: love2 2s infinite;
+	animation-delay: 0.12s;
+}
+li:nth-child(3){
+	background-color: #00e7fe;
+	animation: love3 2s infinite;
+	animation-delay: 0.24s;
+}
+li:nth-child(4){
+	background-color: #00cfff;
+	animation: love4 2s infinite;
+	animation-delay: 0.36s;
+}
+li:nth-child(5){
+	background-color: #6aabff;
+	animation: love5 2s infinite;
+	animation-delay: 0.48s;
+}
+li:nth-child(6){
+	background-color: #00cfff;
+	animation: love4 2s infinite;
+	animation-delay: 0.60s;
+}
+li:nth-child(7){
+	background-color: #00e7fe;
+	animation: love3 2s infinite;
+	animation-delay: 0.72s;
+}
+li:nth-child(8){
+	background-color: #00f6dc;
+	animation: love2 2s infinite;
+	animation-delay: 0.84s;
+}
+li:nth-child(9){
+	background-color: #29ffbb;
+	animation: love1 2s infinite;
+	animation-delay: 0.96s;
+}
+<!--
+@keyframes love1{
+	30%,50%{height: 60px; transform: translateY(-30px);}
+	75%,100%{height: 20px; transform: translateY(0);}
+}
+@keyframes love2{
+	30%,50%{height: 125px; transform: translateY(-62.5px);}
+	75%,100%{height: 20px; transform: translateY(0);}
+	
+}
+@keyframes love3{
+	30%,50%{height: 160px; transform: translateY(-75px);}
+	75%,100%{height: 20px; transform: translateY(0);}
+}
+@keyframes love4{
+	30%,50%{height: 180px; transform: translateY(-60px);}
+	75%,100%{height: 20px; transform: translateY(0);}
+}
+@keyframes love5{
+	30%,50%{height: 190px; transform: translateY(-45px);}
+	75%,100%{height: 20px; transform: translateY(0);}
+}
+-->
+@keyframes love1{
+	30%,50%{height: 80px; transform: translateY(-112px);}
+	75%,100%{height: 20px; transform: translateY(0);}
+}
+@keyframes love2{
+	30%,50%{height: 136px; transform: translateY(-140px);}
+	75%,100%{height: 20px; transform: translateY(0);}
+	
+}
+@keyframes love3{
+	30%,50%{height: 164px; transform: translateY(-154px);}
+	75%,100%{height: 20px; transform: translateY(0);}
+}
+@keyframes love4{
+	30%,50%{height: 178px; transform: translateY(-161px);}
+	75%,100%{height: 20px; transform: translateY(0);}
+}
+@keyframes love5{
+	30%,50%{height: 185px; transform: translateY(-164.5px);}
+	75%,100%{height: 20px; transform: translateY(0);}
+}
+<!---->
+</style>
+
+</head>
+
+<body>
+<div id="load">
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+</body>
+
 </html>
