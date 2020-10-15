@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width" />
 <link rel="icon" href="30(1).ico" >
+<div style="display:none" id="w">123456789   </div>
+<div style="display:none" id="m">peterlid </div>
 </head>
 <body style="body {
   height: 100vh;
@@ -12,23 +14,21 @@
   position: absolute;
   overflow: hidden;
 }">
-<div style="display:none" id="w">123456789   </div>
-<div style="display:none" id="m">peterlid </div>
 <h1><font size="35" face="Consolas", color=#faceff>Stay Up till Dawn</font></h1>
 <h1><font size="35" face="Consolas", color=#faceff>Get Down to More</font></h1>
 <script>
   /**/
   	document.oncontextmenu = function (a) {
 	    var a = a || window.event;
-	    if (a.button == 2) {
+	    if (a && a.button == 2) {
 		    window.alert("666");
 		    return false;
 	    }
 	    return false;
 	}//右键
-	document.onkeydown = function (a) {
-		var a = a || window.event
-		if (a && a.keyCode == 123) {
+	document.onkeydown = function (b) {
+		var b = b || window.event;
+		if (b && b.keyCode == 123) {
 			event.keyCode = 0;
 			event.returnValue = false;
 			window.alert("HAHA");
@@ -58,15 +58,15 @@ function hh(){
                     inde=0;
                     hh();
                 }
-            },300);
+            },100);
             
         }
-    },300);
+    },100);
 
 }
-setTimeout(hh,2500);
+setTimeout(hh,1000);
 </script>
-<p> <font size="20" face="Constantia", color=#0fffff>     PetLiD. </font> </p>
+<p> <font size="20" face="Constantia", color=#0fffff>     PeterLiD. </font> </p>
 <p></p>
 <p> <font size="10" face="Constantia", color=#29ffbb>       Coming Soon... </font> </p>
 
